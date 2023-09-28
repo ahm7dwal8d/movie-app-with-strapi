@@ -1,0 +1,240 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --color: hsl(0, 0%, 87%);
+  --animation: 2s ease-in-out infinite;
+  height: calc(100vh - 66px);
+}
+
+.loader .circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: solid 2px var(--color);
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: transparent;
+  animation: circle-keys var(--animation);
+}
+
+.loader .circle .dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color);
+  animation: dot-keys var(--animation);
+}
+
+.loader .circle .outline {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: outline-keys var(--animation);
+}
+
+.circle:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.circle:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.circle:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+.circle:nth-child(5) {
+  animation-delay: 1.2s;
+}
+
+.circle:nth-child(2) .dot {
+  animation-delay: 0.3s;
+}
+
+.circle:nth-child(3) .dot {
+  animation-delay: 0.6s;
+}
+
+.circle:nth-child(4) .dot {
+  animation-delay: 0.9s;
+}
+
+.circle:nth-child(5) .dot {
+  animation-delay: 1.2s;
+}
+
+.circle:nth-child(1) .outline {
+  animation-delay: 0.9s;
+}
+
+.circle:nth-child(2) .outline {
+  animation-delay: 1.2s;
+}
+
+.circle:nth-child(3) .outline {
+  animation-delay: 1.5s;
+}
+
+.circle:nth-child(4) .outline {
+  animation-delay: 1.8s;
+}
+
+.circle:nth-child(5) .outline {
+  animation-delay: 2.1s;
+}
+
+@keyframes circle-keys {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes dot-keys {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes outline-keys {
+  0% {
+    transform: scale(0);
+    outline: solid 20px var(--color);
+    outline-offset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    outline: solid 0 transparent;
+    outline-offset: 20px;
+    opacity: 0;
+  }
+}
+
+.button {
+  color: #ecf0f1;
+  font-size: 17px;
+  background-color: #e67e22;
+  border: 1px solid #f39c12;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 6px 0px #d35400;
+  transition: all 0.1s;
+}
+
+.button:active {
+  box-shadow: 0px 2px 0px #d35400;
+  position: relative;
+  top: 2px;
+}
+
+.slider .slide {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 66px);
+}
+.slider .slide-1 {
+  background-image: url("/src/assets/Slider/Slider-1.jpg");
+}
+.slider .slide-2 {
+  background-image: url("/src/assets/Slider/Slider-2.jpg");
+}
+.slider .slide-3 {
+  background-image: url("/src/assets/Slider/slider-3.jpg");
+}
+.slider .slide-4 {
+  background-image: url("/src/assets/Slider/slider-4.jpg");
+}
+.slider .slide-5 {
+  background-image: url("/src/assets/Slider/slider-5.jpg");
+}
+.slider .slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #24242477;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  opacity: 0.2;
+  color: #fff;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  opacity: 1;
+}
+
+.movie .swiper-button-next,
+.movie .swiper-button-prev {
+  display: inline-block;
+  margin: auto;
+}
+.year {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background-color: #000;
+  padding: 7px;
+}
+.type {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  background-color: #000;
+  padding: 7px;
+}
+.container a.active {
+  color: #f00;
+  opacity: 0.9;
+}
+
+.desktop-header {
+  display: flex;
+}
+.header-icon {
+  display: none;
+}
+@media (max-width: 767px) {
+  .desktop-header {
+    display: none;
+  }
+  .header-icon {
+    display: flex;
+  }
+}

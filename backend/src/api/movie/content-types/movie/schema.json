@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "movies",
+  "info": {
+    "singularName": "movie",
+    "pluralName": "movies",
+    "displayName": "movie",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "movie_title": {
+      "type": "string",
+      "required": true
+    },
+    "movie_bg": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "movie_logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "movie_images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "movie_dec": {
+      "type": "text"
+    },
+    "actors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::actor.actor"
+    },
+    "movie_year": {
+      "type": "biginteger"
+    },
+    "movie_rate": {
+      "type": "decimal"
+    },
+    "mvoies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::actor.actor"
+    },
+    "movie_category": {
+      "type": "customField",
+      "options": [
+        "Action",
+        "Adventure",
+        "Animation",
+        "Comedy",
+        "Crime",
+        "Family",
+        "Drama",
+        "Fantasy",
+        "Sports",
+        "War"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    }
+  }
+}
